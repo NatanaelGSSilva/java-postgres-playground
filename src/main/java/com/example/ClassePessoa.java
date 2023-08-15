@@ -19,7 +19,10 @@ public String getNome() {
 }
 
 public void setNome(String Nome) {
-    this.Nome = Nome;
+    if(Nome.isBlank()){
+        System.out.println("Por favor preencha o nome corretamente");
+    }
+    else this.Nome = Nome.trim().toUpperCase();
 }
 
 public String getDataNascimento() {
@@ -35,11 +38,11 @@ public void CadastrarPessoa(){
 };
 
 public static void main(String[] args) {
-    ClassePessoa pessoa = new ClassePessoa("Alina", "30/08/1995");
-    System.out.println(pessoa.getNome());
+    ClassePessoa pessoa = new ClassePessoa("Joao", "30/08/1995");
+    // System.out.println(pessoa.getNome());
     //modificando o acesso
-    pessoa.setNome("20/10/2000");
-    System.out.println("idade é " + pessoa.getDataNascimento());
+    pessoa.setNome("Agata");
+    System.out.println("O nome é " + pessoa.getNome());
 }
 
   
